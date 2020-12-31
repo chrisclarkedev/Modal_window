@@ -25,3 +25,15 @@ for (let i = 0; i < btnsOpenModal.length; i++)
 
 btnCloseModal.addEventListener("click", closeModal);
 overlay.addEventListener("click", closeModal);
+
+// KEYBOARD EVENT (GLOBAL) for "ESC" key
+document.addEventListener("keydown", function (e) {
+  // console.log(e.key);
+  // If the pressed key is "ESC"
+  if (e.key === "Escape") {
+    // If modal doesn't contain hidden class then execute the close the modal function
+    if (!modal.classList.contains("hidden")) {
+      closeModal();
+    }
+  }
+});
